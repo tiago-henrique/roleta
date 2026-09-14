@@ -44,13 +44,13 @@ lista_premios_disponiveis = [
 ]
 
 st.subheader("Prêmios disponíveis na roleta:")
-#if lista_premios_disponiveis:
-#    resumo = ", ".join(
-#        f"{p} ({st.session_state.quantidades[p]})" for p in lista_premios_disponiveis
-#    )
-#    st.write(resumo)
-#else:
-#    st.write("Nenhum prêmio disponível no momento.")
+if lista_premios_disponiveis:
+    resumo = ", ".join(
+        f"{p} ({st.session_state.quantidades[p]})" for p in lista_premios_disponiveis
+    )
+    st.write(resumo)
+else:
+    st.write("Nenhum prêmio disponível no momento.")
 
 if st.button("Girar a Roleta!", type="primary"):
     if not lista_premios_disponiveis:
@@ -68,6 +68,6 @@ if st.button("Girar a Roleta!", type="primary"):
         placeholder.success(f" Parabéns! O prêmio sorteado foi: **{vencedor}** ")
         st.balloons()
 
-        st.info(
-            f"Restam **{st.session_state.quantidades[vencedor]}** unidade(s) de **{vencedor}**."
-        )
+        #st.info(
+        #    f"Restam **{st.session_state.quantidades[vencedor]}** unidade(s) de **{vencedor}**."
+        #)

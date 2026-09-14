@@ -20,17 +20,17 @@ if "quantidades" not in st.session_state:
     st.session_state.quantidades = premios_padrao.copy()
     st.rerun()
 
-st.write(premios_padrao)
-#lista_premios_disponiveis = [
-#    premio for premio, qtd in st.session_state.quantidades.items() if qtd > 0
-#]
+lista_premios_disponiveis = [
+    premio
+    for premio, qtd in st.session_state.quantidades.items()
+    if qtd > 0
+]
 
 st.subheader("Prêmios disponíveis na roleta:")
+
 if lista_premios_disponiveis:
-    resumo = ", ".join(
-        f"{p} ({st.session_state.quantidades[p]})" for p in lista_premios_disponiveis
-    )
-    st.write(resumo)
+    for premio in lista_premios_disponiveis:
+        st.write(f"{premio}")
 else:
     st.write("Nenhum prêmio disponível no momento.")
 
@@ -39,13 +39,21 @@ if st.button("Girar a Roleta!", type="primary"):
         st.warning("Não há mais prêmios disponíveis para sortear!")
     else:
         placeholder = st.empty()
+
         for _ in range(15):
             sorteio_temporario = random.choice(lista_premios_disponiveis)
-            placeholder.markdown(f"### Girando... **{sorteio_temporario}**")
+            placeholder.markdown(
+                f"### 🎰 Girando... **{sorteio_temporario}**"
+            )
             time.sleep(0.1)
 
         vencedor = random.choice(lista_premios_disponiveis)
+
+        # Reduz o estoque do prêmio sorteado
         st.session_state.quantidades[vencedor] -= 1
 
-        placeholder.success(f" Parabéns! O prêmio sorteado foi: **{vencedor}** ")
+        placeholder.success(
+            f"Parabéns! O prêmio sorteado foi: **{vencedor}**"
+        )
+
         st.balloons()

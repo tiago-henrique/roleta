@@ -35,7 +35,7 @@ for premio in list(st.session_state.quantidades.keys()):
             del st.session_state.quantidades[premio]
             st.rerun()
 
-if st.sidebar.button("Resetar quantidades para o padrão"):
+#if st.sidebar.button("Resetar quantidades para o padrão"):
     st.session_state.quantidades = premios_padrao.copy()
     st.rerun()
 

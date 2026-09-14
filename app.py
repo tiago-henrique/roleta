@@ -8,8 +8,8 @@ st.title("Roleta de Sorteio de Prêmios")
 st.write("Gire a roleta para descobrir qual prêmio você ganhou!")
 
 premios_padrao = {
-    "Bloco de notas": 200,
-    "Caneta": 100,
+    "Bloco de notas - CENAP": 200,
+    "Caneta CENAP": 100,
     "Porta crachá (retrátil)": 200,
     "Porta crachá (cordão)": 500,
     "Bombom": 50,

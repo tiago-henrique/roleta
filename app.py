@@ -7,9 +7,11 @@ st.set_page_config(page_title="Roleta de Prêmios", layout="centered")
 st.title("Roleta de Sorteio de Prêmios")
 st.write("Gire a roleta para descobrir qual prêmio você ganhou!")
 
+#premios_padrao = "Smartphone, Voucher R$ 50, Fone de Ouvido, Camiseta, Caneca, Tente de Novo, Livro Python, Vale-Brinde"
+
 st.sidebar.header("Configurações")
 input_premios = st.sidebar.text_area(
-    "Digite os prêmios separados por vírgula:", premios_padrao
+    "Digite os prêmios separados por vírgula:"
 )
 
 lista_premios = [p.strip() for p in input_premios.split(",") if p.strip()]

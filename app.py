@@ -18,25 +18,6 @@ premios_padrao = {
 
 if "quantidades" not in st.session_state:
     st.session_state.quantidades = premios_padrao.copy()
-
-#for premio in list(st.session_state.quantidades.keys()):
-#    col1, col2 = st.sidebar.columns([3, 1])
-#    with col1:
-#        nova_quantidade = st.number_input(
-#            premio,
-#            min_value=0,
-#            value=st.session_state.quantidades[premio],
-#            step=1,
-#            key=f"qtd_{premio}",
-#        )
-#        st.session_state.quantidades[premio] = nova_quantidade
-#    with col2:
-#        if st.button("🗑️", key=f"del_{premio}"):
-#            del st.session_state.quantidades[premio]
-#            st.rerun()
-
-#if st.sidebar.button("Resetar quantidades para o padrão"):
-    st.session_state.quantidades = premios_padrao.copy()
     st.rerun()
 
 lista_premios_disponiveis = [
@@ -67,7 +48,3 @@ if st.button("Girar a Roleta!", type="primary"):
 
         placeholder.success(f" Parabéns! O prêmio sorteado foi: **{vencedor}** ")
         st.balloons()
-
-        #st.info(
-        #    f"Restam **{st.session_state.quantidades[vencedor]}** unidade(s) de **{vencedor}**."
-        #)

@@ -8,11 +8,12 @@ st.title("Roleta de Sorteio de Prêmios")
 st.write("Gire a roleta para descobrir qual prêmio você ganhou!")
 
 #premios_padrao = "Smartphone, Voucher R$ 50, Fone de Ouvido, Camiseta, Caneca, Tente de Novo, Livro Python, Vale-Brinde"
+input_premios = "Bloco de notas, Caneta, Porta crachá (retrátil), Porta crachá (cordão)"
 
-st.sidebar.header("Configurações")
-input_premios = st.sidebar.text_area(
-    "Digite os prêmios separados por vírgula:"
-)
+#st.sidebar.header("Configurações")
+#input_premios = st.sidebar.text_area(
+#    "Digite os prêmios separados por vírgula:"
+#)
 
 lista_premios = [p.strip() for p in input_premios.split(",") if p.strip()]
 

@@ -43,7 +43,7 @@ if st.button("Girar a Roleta!", type="primary"):
         for _ in range(15):
             sorteio_temporario = random.choice(lista_premios_disponiveis)
             placeholder.markdown(
-                f"### 🎰 Girando... **{sorteio_temporario}**"
+                f"### Girando... **{sorteio_temporario}**"
             )
             time.sleep(0.1)
 

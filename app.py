@@ -25,14 +25,14 @@ if "quantidades" not in st.session_state:
     st.session_state.quantidades = premios_padrao.copy()
 
 # Campo para adicionar um novo prêmio
-with st.sidebar.form("novo_premio_form", clear_on_submit=True):
-    novo_nome = st.text_input("Nome do novo prêmio")
-    nova_qtd = st.number_input("Quantidade", min_value=1, value=1, step=1)
-    adicionar = st.form_submit_button("Adicionar prêmio")
-    if adicionar and novo_nome.strip():
-        st.session_state.quantidades[novo_nome.strip()] = int(nova_qtd)
+#with st.sidebar.form("novo_premio_form", clear_on_submit=True):
+#    novo_nome = st.text_input("Nome do novo prêmio")
+#    nova_qtd = st.number_input("Quantidade", min_value=1, value=1, step=1)
+#    adicionar = st.form_submit_button("Adicionar prêmio")
+#    if adicionar and novo_nome.strip():
+#        st.session_state.quantidades[novo_nome.strip()] = int(nova_qtd)
 
-st.sidebar.markdown("---")
+#st.sidebar.markdown("---")
 
 # Permite editar a quantidade de cada prêmio já cadastrado e removê-lo
 for premio in list(st.session_state.quantidades.keys()):

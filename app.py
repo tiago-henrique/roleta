@@ -20,9 +20,10 @@ if "quantidades" not in st.session_state:
     st.session_state.quantidades = premios_padrao.copy()
     st.rerun()
 
-lista_premios_disponiveis = [
-    premio for premio, qtd in st.session_state.quantidades.items() if qtd > 0
-]
+st.write(premios_padrao)
+#lista_premios_disponiveis = [
+#    premio for premio, qtd in st.session_state.quantidades.items() if qtd > 0
+#]
 
 st.subheader("Prêmios disponíveis na roleta:")
 if lista_premios_disponiveis:

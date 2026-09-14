@@ -27,7 +27,6 @@ lista_premios_disponiveis = [
 ]
 
 st.subheader("Prêmios disponíveis na roleta:")
-
 if lista_premios_disponiveis:
     for premio in lista_premios_disponiveis:
         st.write(f"{premio}")
@@ -48,12 +47,8 @@ if st.button("Girar a Roleta!", type="primary"):
             time.sleep(0.1)
 
         vencedor = random.choice(lista_premios_disponiveis)
-
-        # Reduz o estoque do prêmio sorteado
         st.session_state.quantidades[vencedor] -= 1
-
         placeholder.success(
             f"Parabéns! O prêmio sorteado foi: **{vencedor}**"
         )
-
         st.balloons()

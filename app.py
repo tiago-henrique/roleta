@@ -11,7 +11,6 @@ premios_padrao = {
     "Bloco de notas - CENAP": 200,
     "Caneta CENAP": 100,
     "Porta crachá (retrátil)": 200,
-    "Porta crachá (cordão)": 500,
     "Bombom": 50,
     "Prêmio surpresas": 1,
 }
